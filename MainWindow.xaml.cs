@@ -20,7 +20,8 @@ namespace WpfApp8
     {
         GroceryStoreDatabasesEntities groceryStoreDatabasesEntities = new GroceryStoreDatabasesEntities();
 
-        List<Поставка> purveyance = new List<Поставка>();
+        List<Поставка> purveyanceProductList = new List<Поставка>();
+        List<Списание> withdrawalProductList = new List<Списание>();
 
         public MainWindow()
         {
