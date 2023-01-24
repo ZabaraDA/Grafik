@@ -18,7 +18,6 @@ namespace WpfApp8
         public int КодТовара { get; set; }
         public int Количество { get; set; }
         public int Остаток { get; set; }
-        public int КодУчёта { get; set; }
         public System.DateTime ДатаСписания { get; set; }
         public System.DateTime ДатаОповещения { get; set; }
     

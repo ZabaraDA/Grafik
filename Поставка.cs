@@ -21,8 +21,8 @@ namespace WpfApp8
         }
     
         public int Код { get; set; }
-        public int КодМестаОтправки { get; set; }
-        public int КодФилиала { get; set; }
+        public Nullable<int> КодМестаОтправки { get; set; }
+        public Nullable<int> КодФилиала { get; set; }
         public System.DateTime ДатаЗаявки { get; set; }
         public System.DateTime ДатаПоставки { get; set; }
     

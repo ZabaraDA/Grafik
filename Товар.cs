@@ -31,7 +31,7 @@ namespace WpfApp8
         public decimal Цена { get; set; }
         public byte НДС { get; set; }
         public decimal Количество { get; set; }
-        public System.DateTime СрокГодности { get; set; }
+        public int СрокГодности { get; set; }
         public int КодЕдиницыИзмерения { get; set; }
     
         public virtual ЕдиницаИзмерения ЕдиницаИзмерения { get; set; }

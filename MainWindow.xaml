@@ -5,8 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp8"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="900" Width="1440" Background="LightGray" FontSize="20">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="None"/>
+            <Setter Property="Width" Value="auto"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Width" Value="225"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="1"/>
+        </Style>
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Width" Value="225"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="1"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="225"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="1"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Canvas Name="ChartCanvas" Width=" auto" Height="auto"></Canvas>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="BlanchedAlmond">
+            <Button Content="Добавить поставку"></Button>
+            <ComboBox Name="ProductComboBox" DropDownClosed="ProductComboBox_DropDownClosed"></ComboBox>
+            <ComboBox Name="ShowYearComboBox" DropDownClosed="ShowYearComboBox_DropDownClosed"></ComboBox>
+            <TextBlock Name="InfoTextBlock"></TextBlock>
+        </StackPanel>
+        <Canvas Name="ChartCanvas" Grid.Row="1" Width=" auto" Height="auto" Margin="30" ></Canvas>
     </Grid>
 </Window>
