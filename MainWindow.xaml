@@ -49,7 +49,36 @@
             <ComboBox Name="ProductComboBox" DropDownClosed="ProductComboBox_DropDownClosed"></ComboBox>
             <ComboBox Name="ShowYearComboBox" DropDownClosed="ShowYearComboBox_DropDownClosed"></ComboBox>
             <TextBlock Name="InfoTextBlock"></TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>X</TextBlock>
+                <TextBlock Name="txtbX"></TextBlock>
+                <TextBlock>Y</TextBlock>
+                <TextBlock Name="txtbY"></TextBlock>
+            </StackPanel>
         </StackPanel>
-        <Canvas Name="ChartCanvas" Grid.Row="1" Width=" auto" Height="auto" Margin="30" ></Canvas>
+        <Grid Width="1300" Height="600" Grid.Row="1">
+
+
+            <Canvas Name="ChartCanvas" MouseMove="ChartCanvas_MouseMove" Background="BlanchedAlmond">
+                <!--<Canvas.LayoutTransform>
+                <RotateTransform Angle="180"></RotateTransform>
+                
+            </Canvas.LayoutTransform>-->
+            </Canvas>
+            <Canvas Name="ChartCanvas1">
+                <!--<Canvas.LayoutTransform>
+                <RotateTransform Angle="180"></RotateTransform>
+                
+            </Canvas.LayoutTransform>-->
+                <Canvas.LayoutTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="-1"  />
+                </Canvas.LayoutTransform>
+                <!--<Canvas.RenderTransform>
+                <TranslateTransform >
+                    <TranslateTransform.Y ></TranslateTransform.Y>
+                </TranslateTransform>
+            </Canvas.RenderTransform>-->
+            </Canvas>
+        </Grid>
     </Grid>
 </Window>
