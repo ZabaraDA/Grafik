@@ -7,6 +7,52 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="1440" Background="LightGray" FontSize="20">
     <Window.Resources>
+        <Style TargetType="ToolTip" BasedOn="{StaticResource {x:Type ToolTip}}">
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToolTip">
+                        <Border Name="Border" CornerRadius="10"
+                BorderThickness="1"
+                Width="{TemplateBinding Width}"
+                Height="{TemplateBinding Height}">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0"
+                                 EndPoint="0,1">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStopCollection>
+                                            <GradientStop Color="AliceBlue"
+                                Offset="0.0" />
+                                            <GradientStop Color="Beige"
+                                Offset="1.0" />
+                                        </GradientStopCollection>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+
+                            </Border.Background>
+                            <Border.BorderBrush>
+                                <SolidColorBrush Color="#FFE6AB2A" />
+                            </Border.BorderBrush>
+                            <ContentPresenter Margin="4"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasDropShadow"
+                   Value="true">
+                                <Setter TargetName="Border"
+                    Property="CornerRadius"
+                    Value="4" />
+                                <Setter TargetName="Border"
+                    Property="SnapsToDevicePixels"
+                    Value="true" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="TextWrapping" Value="NoWrap"/>
             <Setter Property="TextTrimming" Value="None"/>
@@ -50,7 +96,7 @@
             <ComboBox Name="ShowYearComboBox" DropDownClosed="ShowYearComboBox_DropDownClosed"></ComboBox>
             <TextBlock Name="InfoTextBlock"></TextBlock>
             <StackPanel Orientation="Horizontal">
-                <TextBlock>X</TextBlock>
+                <TextBlock >X</TextBlock>
                 <TextBlock Name="txtbX"></TextBlock>
                 <TextBlock>Y</TextBlock>
                 <TextBlock Name="txtbY"></TextBlock>
@@ -59,17 +105,13 @@
         <Grid Width="1300" Height="600" Grid.Row="1">
 
 
-            <Canvas Name="ChartCanvas" MouseMove="ChartCanvas_MouseMove" Background="BlanchedAlmond">
+            <Canvas Name="ChartCanvas" MouseMove="ChartCanvas_MouseMove" Background="#FFEDEDED">
                 <!--<Canvas.LayoutTransform>
                 <RotateTransform Angle="180"></RotateTransform>
                 
             </Canvas.LayoutTransform>-->
             </Canvas>
             <Canvas Name="ChartCanvas1">
-                <!--<Canvas.LayoutTransform>
-                <RotateTransform Angle="180"></RotateTransform>
-                
-            </Canvas.LayoutTransform>-->
                 <Canvas.LayoutTransform>
                     <ScaleTransform ScaleX="1" ScaleY="-1"  />
                 </Canvas.LayoutTransform>
